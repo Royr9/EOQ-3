@@ -11,7 +11,7 @@ class Action:
         self.type = type
         self.value = value
 
-    def use(self, level, player) -> str:
+    def use(self, game, player) -> str:
         """
         Execute the action.
 
@@ -24,8 +24,11 @@ class Action:
             return self.value
         elif self.type == 'move':
             # Move the player to a new location
-            level.move(self.value)
+            game.get_current_level().move(self.value)
             return f"You walked to the {self.value}"
+        elif self.type == "next_level":
+            game.next_level()
+            return
 
     def __str__(self):
         """
