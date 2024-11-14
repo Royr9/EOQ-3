@@ -13,5 +13,11 @@ class Location:
     def use_action(self, name):
         self.get_action(name).use()
 
+    def add_action(self, action_name, action):
+        self.actions[action_name] = action
+
+    def remove_action(self, action_name):
+        del self.actions[action_name]
+
     def __str__(self):
         return self.name + ": " + self.description

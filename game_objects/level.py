@@ -70,6 +70,12 @@ class Level:
 
     def get_location_names(self):
         return list(self.locations.keys())
+    
+    def add_location(self, location):
+        self.locations.append(location)
+
+    def remove_location(self, location):
+        self.locations.remove(location)
 
     def move(self, location):
         self.current_location = location
