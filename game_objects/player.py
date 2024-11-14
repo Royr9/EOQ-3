@@ -1,4 +1,4 @@
-from game_object import Inventory
+from game_objects.inventory import Inventory
 
 class Player:
     def __init__(self, name, health):
