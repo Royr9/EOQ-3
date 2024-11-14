@@ -10,7 +10,7 @@
 <header>
     <nav>
         <span class="player_name">{{ player.name }}</span>
-        <span class="health">{{ player.health }}</span>
+        <span class="health">hp {{ player.health }}</span>
         <span class="armor">
             {% if player.get_armor() %}
                 {{ player.get_armor().get_armor_defense() }}    
