@@ -39,6 +39,23 @@ game_data = {
     ],
     1: [
         {
+            "name": "Hallway",
+            "description": "The hallway is long and filled with students",
+            "actions": [
+                {
+                    "name": "Enter toilet",
+                    "type": "print",
+                    "value": "The janitor blocks the door"
+                }, {
+                    "name": "Enter office",
+                    "type": "move",
+                    "value": "Office",
+                }, {
+                    "name": "Enter igloo",
+                    "type": "move",
+                    "value": "Igloo",
+                }            ]
+        }, {
             "name": "Igloo",
             "description": "You feel comfortable here",
             "actions": [
@@ -56,23 +73,6 @@ game_data = {
                     "value": "Office",
                 }
             ]
-        }, {
-            "name": "Hallway",
-            "description": "The hallway is long and filled with students",
-            "actions": [
-                {
-                    "name": "Enter toilet",
-                    "type": "print",
-                    "value": "The janitor blocks the door"
-                }, {
-                    "name": "Enter office",
-                    "type": "move",
-                    "value": "Office",
-                }, {
-                    "name": "Enter igloo",
-                    "type": "move",
-                    "value": "Igloo",
-                }            ]
         }, {
             "name": "Office",
             "description": "Its quiet here",
