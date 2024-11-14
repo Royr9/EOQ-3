@@ -80,14 +80,15 @@ class Level:
     def move(self, location):
         self.current_location = location
 
+
 def load():
     level_list = []
 
-    for level in levels:
+    for level, locations_data in levels.items():
         locations = {}
         starting_location = None
 
-        for location in levels[level]:
+        for location in locations_data:
             name = location["name"]
             description = location["description"]
             actions = {}
