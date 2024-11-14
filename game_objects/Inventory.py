@@ -1,4 +1,4 @@
-from game_object.items import Item, Weapon, Armor
+from game_objects.items import Item, Weapon, Armor
 
 class Inventory:
     def __init__(self):
