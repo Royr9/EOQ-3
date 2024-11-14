@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My favorite programming languages</title>
+    <script>
+        window.addEventListener("beforeunload", function() {
+            localStorage.setItem("scrollPosition", window.scrollY);
+        });
+        window.addEventListener("load", function() {
+            const scrollPosition = localStorage.getItem("scrollPosition");
+            if (scrollPosition) {
+                window.scrollTo(0, parseInt(scrollPosition, 10));
+            }
+        });
+        setTimeout(function() {
+            location.reload();
+        }, 3000);
+    </script>
+</head>
+<body>
+    <h1>Best languages:</h1>
+    <ul>        <li>python</li>
+        <li>lua</li>
+        <li>php</li>
+        <li>basic</li>
+        <li>html</li>
+        <li>fortran</li>
+        <li>actionscript</li>
+        <li>brainfck</li>
+    </ul>
+</body>
+</html>
