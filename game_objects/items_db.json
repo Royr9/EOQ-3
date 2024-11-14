@@ -1,46 +1,191 @@
 {
-    "weapons": [
-      "Flaming Sword of Knowledge",
-      "Arcane Staff of Programming",
-      "Cryptic Dagger of Debugging",
-      "Lightning Gauntlets of Networking",
-      "Shield of Academic Integrity",
-      "Infernal Laptop of Infinite Tabs",
-      "Tome of Forgotten Algorithms",
-      "Chalkboard Eraser of Silence",
-      "Ancient Compass of Semester Plans",
-      "Laser Pointer of Precision",
-      "Calculator of Critical Hits",
-      "Stapler of Doom",
-      "Notebook of Secrets",
-      "Pencil of Endless Scribbles",
-      "Backpack of Infinite Storage",
-      "USB Drive of Data Corruption",
-      "Keychain of Multi-purpose Tools",
-      "Headphones of Sonic Boom",
-      "Flashlight of Enlightenment",
-      "Water Bottle of Endless Stamina"
-    ],
-    "armors": [
-      "Hoodie of Infinite Comfort",
-      "Lab Coat of Invulnerability",
-      "Blazer of Professional Confidence",
-      "Backpack of Defensive Layers",
-      "Sweater Vest of Wisdom",
-      "Armor of Forgotten Deadlines",
-      "Trench Coat of Shadowy Secrets",
-      "Jacket of Resilient Pockets",
-      "Puffer Coat of Frost Resistance",
-      "Scarf of Stealthy Silence",
-      "Beanie of Brain Power",
-      "Goggles of Clarity",
-      "Gloves of Precision",
-      "Boots of Infinite Stair Climbing",
-      "Belt of Binding Courage",
-      "Helmet of Mental Focus",
-      "Notebook Shield of Note-Taking",
-      "Plated ID Card of Identification",
-      "Campus Map Cloak of Navigation",
-      "Sports Jersey of Team Spirit"
-    ]
-  }
+  "spells": [
+    {
+      "name": "Commandment of Clean Code",
+      "rarity": "Epic",
+      "damage": 25
+    },
+    {
+      "name": "Psalm of Syntax Perfection",
+      "rarity": "Rare",
+      "damage": 18
+    },
+    {
+      "name": "Beatitude of Debugging Clarity",
+      "rarity": "Common",
+      "damage": 12
+    },
+    {
+      "name": "Genesis of Algorithms",
+      "rarity": "Legendary",
+      "damage": 30
+    },
+    {
+      "name": "Pentecost of Parallel Processing",
+      "rarity": "Uncommon",
+      "damage": 16
+    },
+    {
+      "name": "Apocalypse of Infinite Loops",
+      "rarity": "Rare",
+      "damage": 20
+    },
+    {
+      "name": "Sermon on the Semantic Mountain",
+      "rarity": "Common",
+      "damage": 10
+    },
+    {
+      "name": "Scroll of Infinite Recursion",
+      "rarity": "Epic",
+      "damage": 28
+    },
+    {
+      "name": "Covenant of Version Control",
+      "rarity": "Rare",
+      "damage": 19
+    },
+    {
+      "name": "Exodus of Deprecated APIs",
+      "rarity": "Legendary",
+      "damage": 29
+    },
+    {
+      "name": "Revelation of Memory Leaks",
+      "rarity": "Uncommon",
+      "damage": 15
+    },
+    {
+      "name": "Plague of Null Pointers",
+      "rarity": "Epic",
+      "damage": 27
+    },
+    {
+      "name": "Transfiguration of Legacy Code",
+      "rarity": "Rare",
+      "damage": 21
+    },
+    {
+      "name": "Miracle of Database Optimization",
+      "rarity": "Uncommon",
+      "damage": 14
+    },
+    {
+      "name": "Blessing of Binary Trees",
+      "rarity": "Common",
+      "damage": 9
+    },
+    {
+      "name": "Armor of Asynchronous Grace",
+      "rarity": "Epic",
+      "damage": 26
+    },
+    {
+      "name": "Parable of the Perfect Query",
+      "rarity": "Rare",
+      "damage": 22
+    },
+    {
+      "name": "Holy Schema of RESTful Services",
+      "rarity": "Uncommon",
+      "damage": 13
+    },
+    {
+      "name": "Incantation of Immutable Objects",
+      "rarity": "Legendary",
+      "damage": 30
+    },
+    {
+      "name": "Ascension of Cloud Deployments",
+      "rarity": "Common",
+      "damage": 11
+    }
+  ],
+  "armors": [
+    {
+      "name": "Breastplate of Bug-Free Logic",
+      "rarity": "Epic",
+      "defense": 26
+    },
+    {
+      "name": "Tabernacle of Secure Encryption",
+      "rarity": "Legendary",
+      "defense": 30
+    },
+    {
+      "name": "Hood of the Heavenly Framework",
+      "rarity": "Uncommon",
+      "defense": 14
+    },
+    {
+      "name": "Shield of Error Handling",
+      "rarity": "Rare",
+      "defense": 20
+    },
+    {
+      "name": "Helmet of Infinite Uptime",
+      "rarity": "Epic",
+      "defense": 27
+    },
+    {
+      "name": "Cloak of the Holy Debugger",
+      "rarity": "Common",
+      "defense": 10
+    },
+    {
+      "name": "Gauntlets of Graceful Refactoring",
+      "rarity": "Rare",
+      "defense": 19
+    },
+    {
+      "name": "Boots of DevOps Deliverance",
+      "rarity": "Uncommon",
+      "defense": 13
+    },
+    {
+      "name": "Robe of the Redeeming Compiler",
+      "rarity": "Legendary",
+      "defense": 30
+    },
+    {
+      "name": "Mantle of Monolithic Fortitude",
+      "rarity": "Common",
+      "defense": 12
+    },
+    {
+      "name": "Breastplate of Cloud Covenant",
+      "rarity": "Rare",
+      "defense": 21
+    },
+    {
+      "name": "Girdle of Graceful Threads",
+      "rarity": "Uncommon",
+      "defense": 15
+    },
+    {
+      "name": "Vambrace of Virtual Salvation",
+      "rarity": "Epic",
+      "defense": 28
+    },
+    {
+      "name": "Greaves of the Great Algorithm",
+      "rarity": "Rare",
+      "defense": 18
+    },
+    {
+      "name": "Tabard of Testing Truths",
+      "rarity": "Common",
+      "defense": 9
+    },
+    {
+      "name": "Cuirass of Continuous Integration",
+      "rarity": "Epic",
+      "defense": 25
+    },
+    {
+      "name": "Shroud of Scriptural Security",
+      "rarity": "Legendary",
+      "defense": 30
+    }
+  ]
+}
