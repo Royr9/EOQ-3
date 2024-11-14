@@ -1,69 +1,31 @@
 class Location:
-    """
-    Represents a location in a 2D coordinate system.
-    """
+    def __init__(self, name, description, actions=None):
+        self.name = name
+        self.description = description
+        self.actions = actions if actions is not None else {}
 
-    def __init__(self, starting_x=0, starting_y=0):
-        """
-        Initializes a Location object with starting coordinates.
+    def add_action(self, action_name, action):
+        self.actions[action_name] = action
 
-        Args:
-            starting_x (int): The initial x-coordinate (default is 0).
-            starting_y (int): The initial y-coordinate (default is 0).
-        """
-        self.x = starting_x
-        self.y = starting_y
+    def remove_action(self, action_name):
+        del self.actions[action_name]
 
-    def get_location(self):
-        """
-        Returns the current coordinates as a tuple.
+    def describe(self):
+        print(self.description)
 
-        Returns:
-            tuple: A tuple containing the current x and y values.
-        """
-        return self.x, self.y
 
-    def move_left(self, amount=1):
-        """
-        Moves the location left by a specified amount.
+class Floor:
+    def __init__(self, level_number, locations=None):
+        self.level_number = level_number
+        self.locations = locations if locations is not None else []
 
-        Args:
-            amount (int): The distance to move left (default is 1).
-        """
-        self.x -= amount
+    def add_location(self, location):
+        self.locations.append(location)
 
-    def move_right(self, amount=1):
-        """
-        Moves the location right by a specified amount.
+    def remove_location(self, location):
+        self.locations.remove(location)
 
-        Args:
-            amount (int): The distance to move right (default is 1).
-        """
-        self.x += amount
-
-    def move_up(self, amount=1):
-        """
-        Moves the location up by a specified amount.
-
-        Args:
-            amount (int): The distance to move up (default is 1).
-        """
-        self.y += amount
-
-    def move_down(self, amount=1):
-        """
-        Moves the location down by a specified amount.
-
-        Args:
-            amount (int): The distance to move down (default is 1).
-        """
-        self.y -= amount
-
-    def __str__(self):
-        """
-        Returns a string representation of the location.
-
-        Returns:
-            str: A formatted string containing the current x and y values.
-        """
-        return f'{self.x}, {self.y}'
+    def describe(self):
+        print(f"Floor {self.level_number} has the following locations:")
+        for location in self.locations:
+            print(f"- {location.name}: {location.description}")
