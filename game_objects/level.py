@@ -27,7 +27,7 @@ levels = {
                     "type": "print",
                     "value": "The coffee machine is out of water"
                 }, {
-                    "name": "enter Hallway",
+                    "name": "enter hallway",
                     "type": "move",
                     "value": "hallway",
                 }, {
@@ -48,8 +48,11 @@ levels = {
                     "name": "enter office",
                     "type": "move",
                     "value": "office",
-                }
-            ]
+                }, {
+                    "name": "enter igloo",
+                    "type": "move",
+                    "value": "igloo",
+                }            ]
         }, {
             "name": "office",
             "description": "Its quiet here",
