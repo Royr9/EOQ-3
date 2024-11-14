@@ -4,9 +4,10 @@ import random
 
 
 class Demon(ABC):
-    def __init__(self):
+    def __init__(self, name):
         self.health = 100
         self.attacks = attacks
+        self.name = name
 
     def get_damage(self):
         return self.health
@@ -22,7 +23,8 @@ class Demon(ABC):
 
 class Frank(Demon):
     def __init__(self):
-        super().__init__()
+        name = "Frank"
+        super().__init__(name)
         self.image = '/images/demons/frank.jpg'
 
     def set_damage(self, damage):
@@ -38,7 +40,8 @@ class Frank(Demon):
 
 class Tibor(Demon):
     def __init__(self):
-        super().__init__()
+        name = "Tibor"
+        super().__init__(name)
         self.image = '/images/demons/tibor.jpg'
         self.custom_attacks = {
             "Insults you in Swedish": {
@@ -60,7 +63,8 @@ class Tibor(Demon):
 
 class Peter(Demon):
     def __init__(self):
-        super().__init__()
+        name = "Peter"
+        super().__init__(name)
         self.image = '/images/demons/peter.jpg'
 
     def set_damage(self, damage):
@@ -76,7 +80,8 @@ class Peter(Demon):
 
 class Olivier(Demon):
     def __init__(self):
-        super().__init__()
+        name = "Olivier"
+        super().__init__(name)
         self.image = '/images/demons/olivier.jpg'
 
     def set_damage(self, damage):
