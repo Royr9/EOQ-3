@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from game_objects.player import Player
 from game_objects.game import load
 
+
 app = Flask(__name__)
 app.secret_key = 'fdkdlsfsbvbsadfsdf'
 
@@ -12,8 +13,14 @@ print(game_object.get_current_level())
 player = None
 action_res = None
 
-@app.route("/start-game", methods=['GET', 'POST'])
 
+@app.route("/fight-demon")
+def fight():
+    
+    return "das"
+
+
+@app.route("/start-game", methods=['GET', 'POST'])
 def start_game():
     global player  # noqa: PLW0603
     if request.method == "GET":
