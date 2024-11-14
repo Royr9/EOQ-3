@@ -7,13 +7,27 @@ app.secret_key = 'fdkdlsfsbvbsadfsdf'
 
 levels = load()
 level = levels[0]
-player = Player(name="notDemonFrank", health=100)
+player = None
+
+
+@app.route("/start-game", methods=['GET', 'POST'])
+
+def start_game():
+    global player  # noqa: PLW0603
+    if request.method == "GET":
+        return render_template("start-screen.html")
+    
+    player = Player(request.form.get("username"), health=100)
+    
+    return redirect("/")
+    
 
 @app.route('/')
 def game():
+    if not player:
+        return redirect("/start-game")
     location = level.get_current_location()
     actions = location.get_action_names()
-
     return render_template('game.html', location=location, actions=actions, player=player)
 
 @app.route('/choose_action', methods=['POST'])

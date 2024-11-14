@@ -27,3 +27,59 @@ button {
 button:hover {
     background-color: #6a1c13;
 }
+
+
+/* Header styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+nav span {
+    margin-bottom: 5px;
+}
+
+.player_name, .health, .armor, .items {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.player_name {
+    color: #a83232;
+}
+
+.health {
+    color: #2ecc71;
+}
+
+.armor {
+    color: #f39c12;
+}
+
+.items {
+    color: #8e44ad;
+}
+
+.items span {
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #9b59b6;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.items span:hover {
+    background-color: #8e44ad;
+}
+
+input{
+    padding: 0.5rem 1rem;
+}
