@@ -1,8 +1,7 @@
 class Player:
-    def __init__(self, name, health, location):
+    def __init__(self, name, health):
         self.name = name
         self.health = health
-        self.location = location
         self.inventory = []
 
     def take_damage(self, amount):
@@ -16,4 +15,4 @@ class Player:
         self.inventory.append(item)
 
     def __str__(self):
-        return f"Player {self.name}: Health={self.health}, location={self.location}"
+        return f"Player {self.name}: Health={self.health}"

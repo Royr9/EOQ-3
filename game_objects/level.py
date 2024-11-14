@@ -1,5 +1,5 @@
-from location import Location
-from action import Action
+from game_objects.location import Location
+from game_objects.action import Action
 
 levels = {
     1: [

@@ -10,7 +10,7 @@ def main():
     level = levels[0]
     
     # Create player in starting location
-    player = Player(name="notDemonFrank", health=100, location=level.get_current_location())
+    player = Player(name="notDemonFrank", health=100)
     
     # Simple game loop
     while True:
