@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from demon_attacks import attacks
+from game_objects.demon_attacks import attacks
 import random
 
 
@@ -25,7 +25,8 @@ class Frank(Demon):
     def __init__(self):
         name = "Frank"
         super().__init__(name)
-        self.image = '/images/demons/frank.jpg'
+        self.image = f'/demons/{name}.png'
+
 
     def set_damage(self, damage):
         self.health -= damage * 0.3
@@ -42,7 +43,7 @@ class Tibor(Demon):
     def __init__(self):
         name = "Tibor"
         super().__init__(name)
-        self.image = '/images/demons/tibor.jpg'
+        self.image = f'/demons/{name}.png'
         self.custom_attacks = {
             "Insults you in Swedish": {
                 "Message": "Din dator är en potatis för helvete.", "Damage": 18
@@ -65,7 +66,8 @@ class Peter(Demon):
     def __init__(self):
         name = "Peter"
         super().__init__(name)
-        self.image = '/images/demons/peter.jpg'
+        self.image = f'/demons/{name}.png'
+
 
     def set_damage(self, damage):
         self.health -= damage * 0.8
@@ -82,7 +84,8 @@ class Olivier(Demon):
     def __init__(self):
         name = "Olivier"
         super().__init__(name)
-        self.image = '/images/demons/olivier.jpg'
+        self.image = f'/demons/{name}.png'
+
 
     def set_damage(self, damage):
         self.health -= damage * 0.7
@@ -94,5 +97,15 @@ class Olivier(Demon):
                 break
         return attack
 
-demon = Tibor()
-demon.attack()
+def get_demon_by_name(name):
+    match name:
+        case "Frank":
+            return Frank()
+        case "Peter":
+            return Peter()
+        case "Olivier":
+            return Olivier()
+        case "Tibor":
+            return Tibor()
+        case _:
+            raise NameError("Demon doesn't exist")
