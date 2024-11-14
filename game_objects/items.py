@@ -27,38 +27,30 @@ class Item(ABC):
 class Weapon(Item):
     """Generates a random weapon with random damage
     """
-    def __init__(self, current_floor: int, name: str = ""):
+    def __init__(self, multiplier: int, name: str = ""):
         """
         Args:
-            current_floor (int)
+            multiplier (int)
             name (str, optional): optional new name or leave empty to get random name
         """
         self.type = "weapons"
-        
-        if not name:
-            self.name = game_items[self.type]
-        else:
-            self.name = name
+        super().__init__(name or random.choice(game_items[self.type]))
             
-        self.damage = random.randint(1, 5) * int(current_floor)
+        self.damage = random.randint(1, 5) * int(multiplier)
     
 
 class Armor(Item):
-    def __init__(self, current_floor: int, name: str = ""):
+    def __init__(self, multiplier: int, name: str = ""):
         """_summary_
 
         Args:
-            current_floor (int): _description_
+            multiplier (int): _description_
             name (str, optional): _description_. Defaults to "".
         """
         self.type = "armors"
-        
-        if not name:
-            self.name = game_items[self.type]
-        else:
-            self.name = name
+        super().__init__(name or random.choice(game_items[self.type]))
             
-        self.armor = random.randint(1, 5) * int(current_floor)
+        self.armor = random.randint(1, 5) * int(multiplier)
     
     
 class Key(Item):
