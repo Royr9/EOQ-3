@@ -10,64 +10,84 @@ levels = {
             "description": "Something funny",
             "actions": [
                 {
-                    "name": "use escalator",
+                    "name": "Use escalator",
                     "type": "print",
                     "value": "The escalator is broken. Again..."
+                }, {
+                    "name": "Use stairs",
+                    "type": "print",
+                    "value": "The stairs are broken. Not sure how that happened"
+                }, {
+                    "name": "Use elevator",
+                    "type": "move",
+                    "value": "Elevator"
+                }
+            ]
+        }, {
+            "name": "Elevator",
+            "description": "Before you stands the mighty demon Tibor",
+            "demon": "Tibor",
+            "actions": [
+                {
+                    "name": "Use elevator",
+                    "type": "next_level",
+                    "value": ""
                 }
             ]
         }
     ],
     1: [
         {
-            "name": "igloo",
+            "name": "Igloo",
             "description": "You feel comfortable here",
             "actions": [
                 {
-                    "name": "get coffee",
+                    "name": "Get coffee",
                     "type": "print",
                     "value": "The coffee machine is out of water"
                 }, {
-                    "name": "enter hallway",
+                    "name": "Enter hallway",
                     "type": "move",
-                    "value": "hallway",
+                    "value": "Hallway",
                 }, {
-                    "name": "enter office",
+                    "name": "Enter office",
                     "type": "move",
-                    "value": "office",
+                    "value": "Office",
                 }
             ]
         }, {
-            "name": "hallway",
+            "name": "Hallway",
             "description": "The hallway is long and filled with students",
             "actions": [
                 {
-                    "name": "enter toilet",
+                    "name": "Enter toilet",
                     "type": "print",
                     "value": "The janitor blocks the door"
                 }, {
-                    "name": "enter office",
+                    "name": "Enter office",
                     "type": "move",
-                    "value": "office",
+                    "value": "Office",
                 }, {
-                    "name": "enter igloo",
+                    "name": "Enter igloo",
                     "type": "move",
-                    "value": "igloo",
+                    "value": "Igloo",
                 }            ]
         }, {
-            "name": "office",
+            "name": "Office",
             "description": "Its quiet here",
+            "demon": "Peter",
             "actions": [
                 {
-                    "name": "enter igloo",
+                    "name": "Enter igloo",
                     "type": "move",
-                    "value": "igloo"
+                    "value": "Igloo"
                 },
                 {
-                    "name": "enter hallway",
+                    "name": "Enter hallway",
                     "type": "move",
-                    "value": "hallway"
+                    "value": "Hallway"
                 }, {
-                    "name": "talk to peter",
+                    "name": "Talk to peter",
                     "type": "print",
                     "value": "Peter says a terrible pun, Peter is happy now."
                 }
@@ -151,10 +171,16 @@ def load():
             if starting_location is None:
                 starting_location = name
 
+
+            if "demon" in location:
+                demon = location["demon"]
+            else:
+                demon = None
+
             for action in location["actions"]:
                 actions[action["name"]] = Action(action["name"], action["type"], action["value"])
 
-            locations[name] = (Location(name, description, actions))
+            locations[name] = (Location(name, description, actions, demon))
         level_list.append(Level(level, starting_location, locations))
 
     return level_list

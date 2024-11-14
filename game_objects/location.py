@@ -1,5 +1,5 @@
 class Location:
-    def __init__(self, name, description, actions):
+    def __init__(self, name, description, actions, demon):
         """
         Initialize a Location object.
 
@@ -10,6 +10,7 @@ class Location:
         self.name = name
         self.description = description
         self.actions = actions
+        self.demon = demon
 
     def get_action_names(self):
         """
@@ -52,6 +53,24 @@ class Location:
         :param action_name: The name of the action to remove
         """
         del self.actions[action_name]
+
+    def has_demon(self):
+        """
+        Check if the character has a demon.
+
+        :return: True if the character has a demon, False otherwise
+        """
+
+        return self.demon is not None
+
+
+    def get_demon(self):
+        """
+        Retrieve the demon object if present.
+
+        :return: The Demon object if the character has one, None otherwise
+        """
+        return self.demon
 
     def __str__(self):
         """
