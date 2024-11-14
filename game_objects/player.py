@@ -1,8 +1,10 @@
+from game_object import Inventory
+
 class Player:
     def __init__(self, name, health):
         self.name = name
         self.health = health
-        self.inventory = []
+        self.inventory = Inventory()
 
     def take_damage(self, amount):
         self.health -= amount
@@ -11,11 +13,8 @@ class Player:
     def heal(self, amount):
         self.health += amount
 
-    def add_item_to_inventory(self, item):
-        self.inventory.append(item)
-    
-    def remove_item_from_inventory(self, item):
-        self.inventory.remove(item)
+    def get_inventory(self):
+        return self.inventory
 
     def __str__(self):
         return f"Player {self.name}: Health={self.health}"
