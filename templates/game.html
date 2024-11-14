@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+<body>
+    <h1>{{ location.name }}</h1>
+    <p>{{ location.description }}</p>
+
+    <h2>Available Actions:</h2>
+    <form action="{{ url_for('choose_action') }}" method="post">
+        {% for action in actions %}
+            <button type="submit" name="action" value="{{ action }}">{{ action }}</button>
+        {% endfor %}
+    </form>
+</body>
+</html>
