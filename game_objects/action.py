@@ -25,7 +25,7 @@ class Action:
         elif self.type == 'move':
             # Move the player to a new location
             level.move(self.value)
-            return f"You moved to {self.value}"
+            return f"You walked to the {self.value}"
 
     def __str__(self):
         """
