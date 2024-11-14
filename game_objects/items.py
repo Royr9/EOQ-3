@@ -25,7 +25,14 @@ class Item(ABC):
     
 
 class Weapon(Item):
+    """Generates a random weapon with random damage
+    """
     def __init__(self, current_floor: int, name: str = ""):
+        """
+        Args:
+            current_floor (int)
+            name (str, optional): optional new name or leave empty to get random name
+        """
         self.type = "weapons"
         
         if not name:
@@ -38,6 +45,12 @@ class Weapon(Item):
 
 class Armor(Item):
     def __init__(self, current_floor: int, name: str = ""):
+        """_summary_
+
+        Args:
+            current_floor (int): _description_
+            name (str, optional): _description_. Defaults to "".
+        """
         self.type = "armors"
         
         if not name:
@@ -51,3 +64,4 @@ class Armor(Item):
 class Key(Item):
     def __init__(self, current_floor: int):
         self.name = f"key_floor_{current_floor}"
+
