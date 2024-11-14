@@ -20,5 +20,8 @@ class Player:
     def get_inventory(self):
         return self.inventory
 
+    def get_armor(self):
+        return self.inventory.get_armor()
+
     def __str__(self):
         return f"Player {self.name}: Health={self.health}"
