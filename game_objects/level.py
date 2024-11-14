@@ -1,3 +1,6 @@
+from location import Location
+from action import Action
+
 levels = {
     1: [
         {
@@ -6,13 +9,16 @@ levels = {
             "actions": [
                 {
                     "name": "get coffee",
-                    "action": "The coffee machine is out of water"
+                    "type": "print",
+                    "value": "The coffee machine is out of water"
                 }, {
                     "name": "enter Hallway",
-                    "action": lambda: move("hallway"),
+                    "type": "move",
+                    "value": "hallway",
                 }, {
                     "name": "enter office",
-                    "action": lambda: move("office"),
+                    "type": "move",
+                    "value": "office",
                 }
             ]
         }, {
@@ -21,10 +27,12 @@ levels = {
             "actions": [
                 {
                     "name": "enter toilet",
-                    "action": "The janitor blocks the door"
+                    "type": "print",
+                    "value": "The janitor blocks the door"
                 }, {
                     "name": "enter office",
-                    "action": lambda: move("office"),
+                    "type": "move",
+                    "value": "office",
                 }
             ]
         }, {
@@ -33,44 +41,58 @@ levels = {
             "actions": [
                 {
                     "name": "enter igloo",
-                    "action": lambda: move("igloo")
+                    "type": "move",
+                    "value": "igloo"
                 },
                 {
                     "name": "enter hallway",
-                    "action": lambda: move("hallway")
+                    "type": "move",
+                    "value": "hallway"
                 }, {
                     "name": "talk to peter",
-                    "action": "Peter says a terrible pun, Peter is happy now."
+                    "type": "print",
+                    "value": "Peter says a terrible pun, Peter is happy now."
                 }
             ]
         }
-    ],
-    2: [
-
     ]
 }
 
 
-def get_levels():
-    return len(levels.keys())
+class Level:
+    def __init__(self, level, starting_location, locations):
+        self.level = level
+        self.current_location = starting_location
+        self.locations = locations
 
+    def get_current_location(self):
+        return self.locations[self.current_location]
 
-def get_locations(level):
-    locations = []
-    for location in levels[level]:
-        locations.append(location["name"])
+    def get_location_names(self):
+        return list(self.locations.keys())
 
-    return locations
+    def move(self, location):
+        self.current_location = location
 
+def load():
+    level_list = []
 
-def visit(location):
-    return
+    for level in levels:
+        locations = {}
+        starting_location = None
 
+        for location in levels[level]:
+            name = location["name"]
+            description = location["description"]
+            actions = {}
 
-def move(name):
-    return
+            if starting_location is None:
+                starting_location = name
 
+            for action in location["actions"]:
+                actions[action["name"]] = Action(action["name"], action["type"], action["value"])
 
-if __name__ == '__main__':
-    print(get_levels())
-    print(get_locations(1))
+            locations[name] = (Location(name, description, actions))
+        level_list.append(Level(level, starting_location, locations))
+
+    return level_list
