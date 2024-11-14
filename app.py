@@ -6,9 +6,9 @@ app = Flask(__name__)
 app.secret_key = 'fdkdlsfsbvbsadfsdf'
 
 levels = load()
-level = levels[0]
+level = levels[1]
 player = None
-
+action_res = None
 
 @app.route("/start-game", methods=['GET', 'POST'])
 
@@ -24,19 +24,21 @@ def start_game():
 
 @app.route('/')
 def game():
+    global action_res, player
     if not player:
         return redirect("/start-game")
     location = level.get_current_location()
     actions = location.get_action_names()
-    return render_template('game.html', location=location, actions=actions, player=player)
+    return render_template('game.html', location=location, actions=actions, player=player, action_res=action_res)
 
 @app.route('/choose_action', methods=['POST'])
 def choose_action():
+    global action_res  # noqa: PLW0603
     action_name = request.form.get('action')
     location = level.get_current_location()
 
     if action_name in location.get_action_names():
-        location.get_action(action_name).use(level, player)
+        action_res = location.get_action(action_name).use(level, player)
         return redirect(url_for('game'))
 
     return redirect(url_for('game'))

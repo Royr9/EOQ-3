@@ -27,6 +27,11 @@
 <body>
     <h1>{{ location.name }}</h1>
     <p>{{ location.description }}</p>
+    {% if action_res %}
+        <p>{{ action_res }}</p>
+    {% endif %}
+    
+   
 
     <h2>Available Actions:</h2>
     <form action="{{ url_for('choose_action') }}" method="post">
