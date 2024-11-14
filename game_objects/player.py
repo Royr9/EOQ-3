@@ -13,6 +13,9 @@ class Player:
 
     def add_item_to_inventory(self, item):
         self.inventory.append(item)
+    
+    def remove_item_from_inventory(self, item):
+        self.inventory.remove(item)
 
     def __str__(self):
         return f"Player {self.name}: Health={self.health}"
