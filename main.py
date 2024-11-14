@@ -28,7 +28,7 @@ def main():
 
         # Move to the chosen location if valid
         if choice in location.get_action_names():
-            location.get_action(choice).use()
+            location.get_action(choice).use(level)
 
 if __name__ == "__main__":
     main()
