@@ -1,3 +1,5 @@
+{% from 'template' import 'module'   %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +7,16 @@
     <title>Game</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
+<header>
+    <nav>
+        <span class="player_name"></span>
+        <span class="health"></span>
+        <span class="armor"></span>
+        <span class="items"></span>
+    </nav>
+</header>
+
 <body>
     <h1>{{ location.name }}</h1>
     <p>{{ location.description }}</p>
