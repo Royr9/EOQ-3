@@ -1,60 +1,95 @@
-
 import random
 import json
 
-# Load the JSON file
+# Load the JSON file containing game item data
 with open("game_objects/items_db.json") as file:
     game_items = json.load(file)
 
-
 class Spell:
     def __init__(self, multiplier: int):
-
+        """
+        Initialize a Spell object.
         
-        name, rarity, damage = random.choice(game_items["spells"]).values()
+        :param multiplier: A factor to multiply the spell's power by
+        """
+        # Randomly select a spell from the database
+        name, rarity, damage = random.choice(list(game_items["spells"].items())).values()
         self.name = name
         self.rarity = rarity
-        self.damage = damage * random.choice((0.5, 1)) * int(multiplier)
-    
+        # Calculate damage based on multiplier and random factor
+        self.damage = int(damage * random.choice((0.5, 1)) * int(multiplier))
+
     def get_name(self):
+        """
+        Get the name of the spell.
+        
+        :return: The spell's name
+        """
         return self.name
-    
+
     def get_rarity(self):
+        """
+        Get the rarity of the spell.
+        
+        :return: The spell's rarity
+        """
         return self.rarity
-    
+
     def get_damage(self):
+        """
+        Get the damage dealt by the spell.
+        
+        :return: The spell's damage value
+        """
         return self.damage
 
 class Armor:
-    """Generates a random weapon with random damage
-    """
     def __init__(self, multiplier: int):
         """
-        Args:
-            multiplier (int)
-            name (str, optional): optional new name or leave empty to get random name
-        """
+        Initialize an Armor object.
         
-        name, rarity, defense = random.choice(game_items["spells"]).values()
+        :param multiplier: A factor to multiply the armor's defense by
+        """
+        # Randomly select armor from the database
+        name, rarity, defense = random.choice(list(game_items["armor"].items())).values()
         self.name = name
         self.rarity = rarity
-        self.defense = defense * random.choice((0.5, 1)) * int(multiplier)
-    
-    
+        # Calculate defense based on multiplier and random factor
+        self.defense = int(defense * random.choice((0.5, 1)) * int(multiplier))
+
     def get_name(self):
-        return self.name
-    
-    def get_rarity(self):
-        return self.rarity
-    
-    def get_armor_defense(self):
-        return self.defense
-    
+        """
+        Get the name of the armor.
         
+        :return: The armor's name
+        """
+        return self.name
+
+    def get_rarity(self):
+        """
+        Get the rarity of the armor.
+        
+        :return: The armor's rarity
+        """
+        return self.rarity
+
+    def get_armor_defense(self):
+        """
+        Get the defense provided by the armor.
+        
+        :return: The armor's defense value
+        """
+        return self.defense
+
+    # Note: The class definition for Key is incomplete and doesn't contain any methods
+
 class Key:
     def __init__(self, current_floor: int):
+        """
+        Initialize a Key object.
+        
+        :param current_floor: The floor number associated with this key
+        """
         self.name = f"key_floor_{current_floor}"
-
-
 
 spell = Spell(1)
