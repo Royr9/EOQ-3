@@ -1,5 +1,6 @@
 import random
 import json
+from string import printable
 
 # Load the JSON file containing game item data
 with open("game_objects/items_db.json") as file:
@@ -13,7 +14,7 @@ class Spell:
         :param multiplier: A factor to multiply the spell's power by
         """
         # Randomly select a spell from the database
-        name, rarity, damage = random.choice(list(game_items["spells"].items())).values()
+        name, rarity, damage = random.choice(list(game_items["spells"])).values()
         self.name = name
         self.rarity = rarity
         # Calculate damage based on multiplier and random factor
@@ -51,7 +52,7 @@ class Armor:
         :param multiplier: A factor to multiply the armor's defense by
         """
         # Randomly select armor from the database
-        name, rarity, defense = random.choice(list(game_items["armor"].items())).values()
+        name, rarity, defense = random.choice(list(game_items["armor"])).values()
         self.name = name
         self.rarity = rarity
         # Calculate defense based on multiplier and random factor
