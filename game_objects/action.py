@@ -4,7 +4,7 @@ class Action:
         self.type = type
         self.value = value
 
-    def use(self, level):
+    def use(self, level, player):
         if self.type == 'print':
             print(self.value)
         elif self.type == 'move':
