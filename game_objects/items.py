@@ -38,7 +38,7 @@ class Armor:
         name, rarity, defense = random.choice(game_items["spells"]).values()
         self.name = name
         self.rarity = rarity
-        self.defense = defense * random.choice((0, 0.2, 0.4, 0.6, 0.8, 1)) * int(multiplier)
+        self.defense = defense * random.choice((0.5, 1)) * int(multiplier)
     
     
     def get_name(self):
