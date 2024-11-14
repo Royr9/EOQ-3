@@ -4,12 +4,11 @@ class Action:
         self.type = type
         self.value = value
 
-    def use(self, level, player):
+    def use(self, level, player) -> str:
         if self.type == 'print':
-            print(self.value)
+            return self.value
         elif self.type == 'move':
-            level.move(self.value)
-            return
+            return f"You moved to {self.value}"
 
     def __str__(self):
         return f"{self.name}: {self.type} - {self.value}"
