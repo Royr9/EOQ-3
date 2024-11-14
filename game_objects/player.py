@@ -51,6 +51,7 @@ class Player:
         :return: The Armor object if equipped, otherwise None
         """
         return self.inventory.get_armor()
+    
 
     def __str__(self):
         """
