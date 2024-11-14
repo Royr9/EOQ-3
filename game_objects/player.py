@@ -7,8 +7,12 @@ class Player:
         self.inventory = Inventory()
 
     def take_damage(self, amount):
+        if self.inventory.get_armor() != None:
+            amount = amount/100*self.inventory.get_armor().get_armor_defense()
+
         self.health -= amount
         self.health = max(self.health, 0)
+        return self.health
 
     def heal(self, amount):
         self.health += amount
