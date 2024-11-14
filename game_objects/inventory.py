@@ -7,7 +7,7 @@ class Inventory:
 
         Creates an empty inventory list and sets armor to None.
         """
-        self.inventory = []
+        self.items = []
         self.armor = None
 
     def add_item(self, item):

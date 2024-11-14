@@ -14,7 +14,7 @@ def game():
     location = level.get_current_location()
     actions = location.get_action_names()
 
-    return render_template('game.html', location=location, actions=actions)
+    return render_template('game.html', location=location, actions=actions, player=player)
 
 @app.route('/choose_action', methods=['POST'])
 def choose_action():
