@@ -110,7 +110,7 @@ game_data = {
     1: [
         {
             "name": "Elevator",
-            "description": "Floor 1",
+            "description": "Floor 1: The Canteen Demon",
             "actions": [
                 {
                     "name": "Use elevator",
@@ -142,7 +142,7 @@ game_data = {
         },
         {
             "name": "Canteen",
-            "description": "The hallway is long and filled with students",
+            "description": "Before you you see Timothy. He has eaten everything there including the lunch ladies, Except the one he holds hostage to make him more food.",
             "demon": "Timothy",
             "actions": [
                 {
@@ -166,7 +166,7 @@ game_data = {
     5: [
         {
             "name": "Elevator",
-            "description": "Floor 5",
+            "description": "Floor 5: Panic in the Office",
             "actions": [
                 {
                     "name": "Use elevator",
@@ -212,8 +212,8 @@ game_data = {
             "actions": [
                 {
                     "name": "Get coffee",
-                    "type": "print",
-                    "value": "The coffee machine is out of water"
+                    "type": "give_spell",
+                    "value": ""
                 },
                 {
                     "name": "Enter elevator",
@@ -264,7 +264,7 @@ game_data = {
         },
         {
             "name": "Roof",
-            "description": "The wind blows through your hair.",
+            "description": "The wind blows through your hair. And you know the time has come, You need to slay the mighty demon Frank.",
             "demon": "Frank",
             "actions": [
                 {
