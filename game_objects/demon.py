@@ -25,12 +25,16 @@ class Frank(Demon):
     def __init__(self):
         name = "Frank"
         super().__init__(name)
-        self.image = f'demons/{name}.png'
+        self.image = 'demons/elf_frank.png'
 
     def set_damage(self, damage) -> int:
         dmg = math.floor(damage * 0.3)
         self.health -= dmg
         self.health = max(self.health, 0)
+        if self.health <= 50:
+            self.image = 'demons/frank.png'
+        else:
+            self.image = 'demons/elf_frank.png'
         return dmg
 
     def attack(self):
