@@ -48,8 +48,6 @@ class Tibor(Demon):
                 "Message": "Din dator är en potatis för helvete.", "Damage": 18
                 }
             }
-    
-    
 
     def set_damage(self, damage):
         self.health -= damage * 0.8
@@ -117,7 +115,6 @@ class Timothy(Demon):
             if attack[1]["Damage"] >= 25 and attack[1]["Damage"] <= 30:
                 break
         return attack
-    
 
 def get_demon_by_name(name):
     match name:
