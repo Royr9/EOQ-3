@@ -66,10 +66,11 @@ nav span {
 
 .items {
     color: #8e44ad;
+    display: flex;
+    flex-direction: column;
 }
 
 .items span {
-    display: inline-block;
     margin-right: 10px;
     padding: 5px;
     border-radius: 3px;
@@ -86,12 +87,12 @@ input{
     filter: invert(32%) sepia(74%) saturate(748%) hue-rotate(262deg) brightness(89%) contrast(101%);
 }
 
-.items {
+.test {
     display: flex;
     flex-wrap: wrap;
 }
 
-.items span {
+.test span {
     display: flex;
     align-items: center;
 }
