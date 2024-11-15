@@ -22,15 +22,25 @@ demon = None
 def fight():
     global demon  # noqa: PLW0602
     spell = None
-    dmg_taken = None
+    action_description = None
+    demon_attack = None
     # handle user action
-    if request.method == "POST":  # noqa: SIM102
+    if request.method == "POST" and player and demon:
         # choose random spell and use it on the demon
-        if request.form.get("attack") and player and demon:
+        if request.form.get("attack"):
             spell = player.inventory.get_spells()[0]
             dmg_taken = demon.set_damage(spell.damage)
+            action_description = f"{demon.name} has suffered {dmg_taken} damage"
+        if request.form.get("heal"):
+            heal_amount = player.heal(15)
+            action_description = f"You have healed {heal_amount} hp"
+        
+        # demon attack
+        # attack is a dict "attack description": "message": ,"Damage":
+        demon_attack = demon.attack()
+        player.take_damage(demon_attack[1]["Damage"])
 
-    return render_template("fight.html", demon=demon, player=player, spell=spell, dmg_taken=dmg_taken)
+    return render_template("fight.html", demon=demon, demon_attack=demon_attack, player=player, spell=spell, action_description=action_description)
 
 
 @app.route("/start-game", methods=['GET', 'POST'])
@@ -60,7 +70,7 @@ def choose_action():
     action_name = request.form.get('action')
     location = level.get_current_location()
 
-    if location.demon:
+    if location.demon and action_name != "Go back":
         demon = get_demon_by_name(location.demon)
         return redirect(url_for("fight"))
     

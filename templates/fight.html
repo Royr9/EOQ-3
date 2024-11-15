@@ -26,9 +26,22 @@
     </div>
     
     <div class="fight-info">
-        {% if spell %}
-            <p class="spell">{{ spell.name }}</p><span>( {{ spell.rarity }})</span>
-            <p>{{ demon.name }} has suffered {{ dmg_taken }}</p>
+        {% if action_description %}
+            <div class="player_action">
+                {% if spell %}
+                    <p class="spell">{{ spell.name }}</p><span>( {{ spell.rarity }})</span>  
+                {% endif %}
+                <p>{{ action_description }}</p>
+            </div>
+        {% endif %}
+       
+        {% if demon_attack %}
+        <div class="demon_action">
+            <!-- description -->
+            <p>{{ demon_attack[0] }}</p>
+            <p>{{ demon_attack[1]["Message"] }}</p>
+            <p>You have suffered {{ demon_attack[1]["Damage"] }} damage</p>
+        </div>
         {% endif %}
     </div>
 
