@@ -86,17 +86,18 @@ def game():
 def choose_action():
     global action_res, demon  # noqa: PLW0603
     action_name = request.form.get('action')
-    location = level.get_current_location()
+    location = game_object.get_current_level().get_current_location()
 
+    
+    if action_name in location.get_action_names():
+        action_res = location.get_action(action_name).use(game_object, player)
+        
     if location.demon and action_name != "Go back":
         demon = get_demon_by_name(location.demon)
         return redirect(url_for("fight"))
     
-    if action_name in location.get_action_names():
-        action_res = location.get_action(action_name).use(game_object, player)
-        return redirect(url_for('game'))
-
     return redirect(url_for('game'))
+
 
 if __name__ == "__main__":
     app.run(debug=True)
