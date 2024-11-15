@@ -11,6 +11,7 @@ class Player:
         self.name = name
         self.health = health
         self.inventory = Inventory()
+        self.image = f"/player/player.png"
 
     def take_damage(self, amount):
         """

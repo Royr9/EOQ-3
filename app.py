@@ -19,9 +19,8 @@ demon = None
 @app.route("/fight-demon")
 def fight():
     global demon  # noqa: PLW0603
-    print(demon)
     
-    return render_template("fight.html", demon=demon)
+    return render_template("fight.html", demon=demon, player=player)
 
 
 @app.route("/start-game", methods=['GET', 'POST'])
