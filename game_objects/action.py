@@ -43,6 +43,9 @@ class Action:
                 player.get_inventory().add_item(spell)
                 self.used = True
                 return f"You received the {spell.name}"
+        elif self.type == 'fight':
+            if game.get_current_level().is_demon_killed():
+                return "You have already slain this filthy demon!"
 
     def __str__(self):
         """
