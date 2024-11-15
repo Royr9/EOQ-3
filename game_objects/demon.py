@@ -132,7 +132,7 @@ class Timothy(Demon):
 
 
     def attack(self):
-        attack_type = random.choice([attacks.items(), self.custom_attacks.items()])
+        attack_type = random.choice([self.custom_attacks.items()])
         while True:
             attack = random.choice(list(attack_type))
             if attack[1]["Damage"] >= 25 and attack[1]["Damage"] <= 30:

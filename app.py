@@ -104,6 +104,8 @@ def choose_action():
 
     if not game_object.get_current_level().is_demon_killed() and "Fight" in action_name or "Disturb" in action_name:
         demon = get_demon_by_name(location.demon)
+        if demon and demon.name != "Frank":
+            demon.health = 50
         # demon = get_demon_by_name("Frank")
         return redirect(url_for("fight"))
 
