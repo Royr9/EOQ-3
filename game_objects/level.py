@@ -52,4 +52,6 @@ class Level:
         self.current_location = location
 
 
+def load():
+    return Level(0,)
 

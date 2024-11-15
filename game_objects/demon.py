@@ -25,7 +25,7 @@ class Frank(Demon):
     def __init__(self):
         name = "Frank"
         super().__init__(name)
-        self.image = f'/demons/{name}.png'
+        self.image = f'demons/{name}.png'
 
 
     def set_damage(self, damage):

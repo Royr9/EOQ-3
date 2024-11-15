@@ -1,15 +1,16 @@
-from string import printable
+# from string import printable
 
 from flask import Flask, render_template, request, redirect, url_for
 from game_objects.player import Player
-from game_objects.level import load
+from game_objects.game import load
+from game_objects.demon import get_demon_by_name
 
 
 app = Flask(__name__)
 app.secret_key = 'fdkdlsfsbvbsadfsdf'
 
 game_object = load()
-print(game_object.get_current_level())
+level = game_object.get_current_level()
 player = None
 action_res = None
 demon = None
@@ -20,7 +21,7 @@ def fight():
     global demon  # noqa: PLW0603
     demon = get_demon_by_name(demon)
     
-    return render_template()
+    return render_template("fight.html", demon=demon)
 
 
 @app.route("/start-game", methods=['GET', 'POST'])
