@@ -27,7 +27,6 @@ class Frank(Demon):
         super().__init__(name)
         self.image = f'demons/{name}.png'
 
-
     def set_damage(self, damage):
         self.health -= damage * 0.3
 
@@ -68,7 +67,6 @@ class Peter(Demon):
         super().__init__(name)
         self.image = f'/demons/{name}.png'
 
-
     def set_damage(self, damage):
         self.health -= damage * 0.8
 
@@ -86,7 +84,6 @@ class Olivier(Demon):
         super().__init__(name)
         self.image = f'/demons/{name}.png'
 
-
     def set_damage(self, damage):
         self.health -= damage * 0.7
 
@@ -96,6 +93,29 @@ class Olivier(Demon):
             if attack[1]["Damage"] >= 25 and attack[1]["Damage"] <= 30:
                 break
         return attack
+    
+class Timothy(Demon):
+    def __init__(self):
+        name = "Timothy"
+        super().__init__(name)
+        self.image = f'/demons/{name}.png'
+        self.custom_attacks = {
+            "Start of the weekend yell": {
+                "Message": "DEAR STUDENTS I'M LEAVING BYYYEE!!!", "Damage": 27
+                }
+            }
+        
+    def set_damage(self, damage):
+        self.health -= damage * 0.7
+
+    def attack(self):
+        attack_type = random.choice([attacks.items(), self.custom_attacks.items()])
+        while True:
+            attack = random.choice(list(attack_type))
+            if attack[1]["Damage"] >= 25 and attack[1]["Damage"] <= 30:
+                break
+        return attack
+    
 
 def get_demon_by_name(name):
     match name:
@@ -107,5 +127,7 @@ def get_demon_by_name(name):
             return Olivier()
         case "Tibor":
             return Tibor()
+        case "Timothy":
+            return Timothy()
         case _:
             raise NameError("Demon doesn't exist")
