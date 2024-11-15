@@ -17,13 +17,11 @@ demon = None
 
 
 
-@app.route("/fight-demon")
+@app.route("/fight")
 def fight():
     global demon  # noqa: PLW0603
     
 
-    
-    
     return render_template("fight.html", demon=demon, player=player)
 
 
