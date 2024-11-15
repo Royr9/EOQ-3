@@ -3,7 +3,6 @@ from game_objects.action import Action
 from game_objects.level import Level
 from game_objects.location import Location
 
-# Define levels data structure
 game_data = {
     0: [
         {
@@ -54,7 +53,7 @@ game_data = {
             "demon": "Tibor",
             "actions": [
                 {
-                   "name": "Fight Tibor",
+                    "name": "Fight Tibor",
                     "type": "fight",
                     "value": ""
                 },
@@ -81,8 +80,8 @@ game_data = {
                 },
                 {
                     "name": "Check toilet",
-                    "type": "",
-                    "value": "todo maybe give the player something?"
+                    "type": "give_spell",
+                    "value": ""
                 },
                 {
                     "name": "Go back",
@@ -146,6 +145,11 @@ game_data = {
             "description": "The hallway is long and filled with students",
             "demon": "Timothy",
             "actions": [
+                {
+                    "name": "Pickup Sandwich",
+                    "type": "give_spell",
+                    "value": ""
+                },
                 {
                     "name": "Fight Timothy",
                     "type": "fight",
@@ -272,6 +276,9 @@ game_data = {
         }
     ]
 }
+
+
+# Define levels data structure
 
 
 def load():
