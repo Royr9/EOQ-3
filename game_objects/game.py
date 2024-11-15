@@ -239,9 +239,9 @@ game_data = {
                     "value": "Hallway"
                 },
                 {
-                    "name": "Talk to peter",
-                    "type": "print",
-                    "value": "Peter says a terrible pun, Peter is happy now."
+                    "name": "Fight peter",
+                    "type": "fight",
+                    "value": ""
                 }
             ]
         }
