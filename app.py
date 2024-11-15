@@ -1,4 +1,3 @@
-# from string import printable
 
 from flask import Flask, render_template, request, redirect, url_for
 from game_objects.player import Player
@@ -20,7 +19,7 @@ demon = None
 
 @app.route("/fight", methods=["POST", "GET"])
 def fight():
-    global demon  # noqa: PLW0602
+    global demon  # noqa: PLW0603
     spell = None
     action_description = None
     demon_attack = None
@@ -88,7 +87,7 @@ def start_game():
 
 @app.route('/')
 def game():
-    global action_res, player
+    global action_res, player  # noqa: PLW0602
     if not player:
         return redirect("/start-game")
     location = game_object.get_current_level().get_current_location()
