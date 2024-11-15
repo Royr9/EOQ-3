@@ -1,4 +1,2 @@
-- Polish battle info div 
 - Create game won html
 - Create pool party option 
-- Add a spell on the roof
