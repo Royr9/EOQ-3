@@ -1,16 +1,34 @@
 # Import necessary modules
+from game_objects.action import Action
 from game_objects.level import Level
 from game_objects.location import Location
-from game_objects.action import Action
 
 # Define levels data structure
 game_data = {
     0: [
         {
+            "name": "Outside",
+            "description": "You stand before the Epi Drost building about to go to school, but something feels wrong.",
+            "actions": [
+                {
+                    "name": "Enter school",
+                    "type": "move",
+                    "value": "Entrance"
+                }
+            ]
+        }, {
             "name": "Entrance",
             "description": "Something funny",
             "actions": [
                 {
+                    "name": "Go to the reception",
+                    "type": "move",
+                    "value": "Reception"
+                }, {
+                    "name": "Go to the toilets",
+                    "type": "move",
+                    "value": "Toilets"
+                }, {
                     "name": "Use escalator",
                     "type": "print",
                     "value": "The escalator is broken. Again..."
@@ -33,11 +51,47 @@ game_data = {
                     "name": "Use elevator",
                     "type": "next_level",
                     "value": ""
+                }, {
+                    "name": "Go back",
+                    "type": "move",
+                    "value": "Entrance"
+                }
+            ]
+        }, {
+            "name": "Toilets",
+            "description": "Description",
+            "actions": [
+                {
+                    "name": "Check sink",
+                    "type": "print",
+                    "value": "You drank some and it made you feel refreshed."
+                }, {
+                    "name": "Check toilet",
+                    "type": "print",
+                    "value": "todo maybe give the player something?"
+                }, {
+                    "name": "Go back",
+                    "type": "move",
+                    "value": "Entrance"
+                }
+            ]
+        }, {
+            "name": "Reception",
+            "description": "As you walk up to there the receptionist starts screaming that there are demons in the building. If only there was someone to kill them.",
+            "actions": [
+                {
+                    "name": "Pickup weapon",
+                    "type": "print",
+                    "value": "Give the player a weapon."
+                }, {
+                    "name": "Go back",
+                    "type": "move",
+                    "value": "Entrance"
                 }
             ]
         }
     ],
-    1: [
+    5: [
         {
             "name": "Hallway",
             "description": "The hallway is long and filled with students",
@@ -54,7 +108,8 @@ game_data = {
                     "name": "Enter igloo",
                     "type": "move",
                     "value": "Igloo",
-                }            ]
+                }
+            ]
         }, {
             "name": "Igloo",
             "description": "You feel comfortable here",
@@ -82,8 +137,7 @@ game_data = {
                     "name": "Enter igloo",
                     "type": "move",
                     "value": "Igloo"
-                },
-                {
+                }, {
                     "name": "Enter hallway",
                     "type": "move",
                     "value": "Hallway"
@@ -94,8 +148,18 @@ game_data = {
                 }
             ]
         }
+    ],
+    9: [
+        {
+            "name": "Roof",
+            "description": "The wind blows through your hair.",
+            "actions": [
+
+            ]
+        }
     ]
 }
+
 
 def load():
     """
@@ -117,7 +181,6 @@ def load():
             if starting_location is None:
                 starting_location = name
 
-
             if "demon" in location:
                 demon = location["demon"]
             else:
@@ -130,6 +193,7 @@ def load():
         level_list.append(Level(level, starting_location, locations))
 
     return Game(level_list)
+
 
 class Game:
     def __init__(self, levels):

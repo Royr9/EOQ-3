@@ -28,7 +28,10 @@ class Action:
             return f"You walked to the {self.value}"
         elif self.type == "next_level":
             game.next_level()
-            return
+            return "You went to the next floor."
+        elif self.type == 'give':
+            #player.get_inventory().add_item()
+            return f"You received the {self.value}"
 
     def __str__(self):
         """

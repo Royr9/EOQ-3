@@ -66,9 +66,9 @@ class Location:
 
     def get_demon(self):
         """
-        Retrieve the demon object if present.
+        Retrieve the demon name if present.
 
-        :return: The Demon object if the character has one, None otherwise
+        :return: The Demon name if the character has one, None otherwise
         """
         return self.demon
 
