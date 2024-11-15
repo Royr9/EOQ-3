@@ -102,7 +102,7 @@ def choose_action():
     action_name = request.form.get('action')
     location = game_object.get_current_level().get_current_location()
 
-    if not game_object.get_current_level().is_demon_killed() and "Fight" in action_name:
+    if not game_object.get_current_level().is_demon_killed() and "Fight" in action_name or "Disturb" in action_name:
         demon = get_demon_by_name(location.demon)
         return redirect(url_for("fight"))
 
