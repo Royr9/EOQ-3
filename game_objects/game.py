@@ -229,8 +229,8 @@ game_data = {
         },
         {
             "name": "Office",
-            "description": "Its quiet here",
-            "demon": "Peter",
+            "description": "As you enter you see Olivier playing open rct 2. It would not be wise to disturb him.",
+            "demon": "Olivier",
             "actions": [
                 {
                     "name": "Enter igloo",
@@ -243,7 +243,7 @@ game_data = {
                     "value": "Hallway"
                 },
                 {
-                    "name": "Fight peter",
+                    "name": "Disturb olivier",
                     "type": "fight",
                     "value": ""
                 }
