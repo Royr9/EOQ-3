@@ -7,11 +7,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='fight-style.css') }}">
 </head>
 <body>
-    <div class="demon">
-        <img src="../static/images/{{ demon.image }}">
-    </div>
     <div class="player">
+        <nav>
+            <span class="player_name">{{ player.name }}</span>
+            <span class="health">hp {{ player.health }}</span>
+            <span class="armor">
+                {% if player.get_armor() %}
+                    {{ player.get_armor().get_armor_defense() }}    
+                {% endif %}
+            </span>
+
+        </nav>
         <img src="../static/images/{{ player.image }}">
     </div>    
+    <div class="demon">
+        <nav>
+            <span class="demom_name">{{ demon.name }}</span>
+            <span class="health">hp {{ demon.health }}</span>
+        </nav>
+        <img src="../static/images/{{ demon.image }}">
+    </div>
 </body>
 </html>
