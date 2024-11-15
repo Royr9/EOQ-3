@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from game_objects.demon_attacks import attacks
 import random
-
+import math
 
 class Demon(ABC):
     def __init__(self, name):
@@ -28,7 +28,7 @@ class Frank(Demon):
         self.image = f'demons/{name}.png'
 
     def set_damage(self, damage) -> int:
-        dmg = damage * 0.3
+        dmg = math.floor(damage * 0.3)
         self.health -= dmg
         return dmg
 
@@ -52,7 +52,8 @@ class Tibor(Demon):
             }
     
     def set_damage(self, damage) -> int:
-        dmg = damage * 0.8
+        dmg = math.floor(damage * 0.3)
+
         self.health -= dmg
         return dmg
 
@@ -74,7 +75,8 @@ class Peter(Demon):
         self.image = f'/demons/{name}.png'
 
     def set_damage(self, damage) -> int:
-        dmg = damage * 0.8
+        dmg = math.floor(damage * 0.3)
+
         self.health -= dmg
         return dmg
 
@@ -94,7 +96,7 @@ class Olivier(Demon):
         self.image = f'/demons/{name}.png'
 
     def set_damage(self, damage) -> int:
-        dmg = damage * 0.7
+        dmg = math.floor(damage * 0.3)
         self.health -= dmg
         return dmg
 
@@ -118,7 +120,7 @@ class Timothy(Demon):
             }
         
     def set_damage(self, damage) -> int:
-        dmg = damage * 0.7
+        dmg = math.floor(damage * 0.3)
         self.health -= dmg
         return dmg
 
