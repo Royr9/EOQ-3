@@ -52,7 +52,7 @@ class Tibor(Demon):
             }
     
     def set_damage(self, damage) -> int:
-        dmg = math.floor(damage * 0.3)
+        dmg = math.floor(damage * 0.8)
 
         self.health -= dmg
         return dmg
@@ -75,7 +75,7 @@ class Peter(Demon):
         self.image = f'/demons/{name}.png'
 
     def set_damage(self, damage) -> int:
-        dmg = math.floor(damage * 0.3)
+        dmg = math.floor(damage * 0.7)
 
         self.health -= dmg
         return dmg
@@ -96,7 +96,7 @@ class Olivier(Demon):
         self.image = f'/demons/{name}.png'
 
     def set_damage(self, damage) -> int:
-        dmg = math.floor(damage * 0.3)
+        dmg = math.floor(damage * 0.5)
         self.health -= dmg
         return dmg
 
@@ -120,7 +120,7 @@ class Timothy(Demon):
             }
         
     def set_damage(self, damage) -> int:
-        dmg = math.floor(damage * 0.3)
+        dmg = math.floor(damage * 0.5)
         self.health -= dmg
         return dmg
 
