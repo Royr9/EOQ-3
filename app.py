@@ -19,7 +19,7 @@ demon = None
 @app.route("/fight-demon")
 def fight():
     global demon  # noqa: PLW0603
-    demon = get_demon_by_name(demon)
+    print(demon)
     
     return render_template("fight.html", demon=demon)
 
@@ -50,6 +50,10 @@ def choose_action():
     action_name = request.form.get('action')
     location = level.get_current_location()
 
+    if location.demon:
+        demon = get_demon_by_name(location.demon)
+        return redirect(url_for("fight"))
+    
     if action_name in location.get_action_names():
         action_res = location.get_action(action_name).use(game_object, player)
         return redirect(url_for('game'))

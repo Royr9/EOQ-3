@@ -48,6 +48,8 @@ class Tibor(Demon):
                 "Message": "Din dator är en potatis för helvete.", "Damage": 18
                 }
             }
+    
+    
 
     def set_damage(self, damage):
         self.health -= damage * 0.8
@@ -130,4 +132,4 @@ def get_demon_by_name(name):
         case "Timothy":
             return Timothy()
         case _:
-            raise NameError("Demon doesn't exist")
+            return print("demon doesnt exist")
