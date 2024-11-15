@@ -142,7 +142,7 @@ game_data = {
         },
         {
             "name": "Canteen",
-            "description": "Before you you see Timothy. He has eaten everything there including the lunch ladies, Except the one he holds hostage to make him more food.",
+            "description": "In front of you stands Timothy. He has eaten everything there including the lunch ladies, Except the one he holds hostage to make him more food.",
             "demon": "Timothy",
             "actions": [
                 {
@@ -259,6 +259,11 @@ game_data = {
                     "name": "Enter roof terrace",
                     "type": "move",
                     "value": "Roof"
+                },
+                {
+                    "name": "Drink liquid courage",
+                    "type": "give_spell",
+                    "value": ""
                 }
             ]
         },

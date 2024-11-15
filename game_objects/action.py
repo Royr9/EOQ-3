@@ -1,4 +1,5 @@
 from game_objects.items import Spell, Armor, Key
+
 class Action:
     def __init__(self, name, type, value):
         """
