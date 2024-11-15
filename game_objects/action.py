@@ -1,3 +1,4 @@
+from game_objects.items import Spell, Armor, Key
 class Action:
     def __init__(self, name, type, value):
         """
@@ -10,6 +11,7 @@ class Action:
         self.name = name
         self.type = type
         self.value = value
+        self.used = False
 
     def use(self, game, player) -> str:
         """
@@ -19,6 +21,7 @@ class Action:
         :param player: The player object
         :return: A string describing the result of the action
         """
+
         if self.type == 'print':
             # Print the value directly
             return self.value
@@ -29,9 +32,14 @@ class Action:
         elif self.type == "next_level":
             game.next_level()
             return "You went to the next floor."
-        elif self.type == 'give':
-            #player.get_inventory().add_item()
-            return f"You received the {self.value}"
+        elif self.type == 'give_spell':
+            if self.used:
+                return "You have already learned this spell!"
+            else:
+                spell = Spell(game.get_level())
+                player.get_inventory().add_item(spell)
+                self.used = True
+                return f"You received the {spell.name}"
 
     def __str__(self):
         """

@@ -18,7 +18,7 @@ game_data = {
             ]
         }, {
             "name": "Entrance",
-            "description": "Something funny",
+            "description": "As you walk in you see the receptionist is trying to get your attention. Maybe you should check it out.",
             "actions": [
                 {
                     "name": "Go to the reception",
@@ -80,9 +80,9 @@ game_data = {
             "description": "As you walk up to there the receptionist starts screaming that there are demons in the building. If only there was someone to kill them.",
             "actions": [
                 {
-                    "name": "Pickup weapon",
-                    "type": "print",
-                    "value": "Give the player a weapon."
+                    "name": "Learn spell",
+                    "type": "give_spell",
+                    "value": ""
                 }, {
                     "name": "Go back",
                     "type": "move",
@@ -205,3 +205,6 @@ class Game:
 
     def next_level(self):
         self.current_level += 1
+
+    def get_level(self):
+        return self.current_level
