@@ -5,6 +5,7 @@ from game_objects.player import Player
 from game_objects.game import load
 from game_objects.demon import get_demon_by_name
 from game_objects.items import Spell
+import random
 
 
 app = Flask(__name__)
@@ -27,7 +28,9 @@ def fight():
     if request.method == "POST" and player and demon:
         # choose random spell and use it on the demon
         if request.form.get("attack"):
-            spell = player.inventory.get_spells()[0]
+            user_spells = player.inventory.get_spells()
+            spell = user_spells[random.randint(0, len(user_spells) - 1)]
+            
             dmg_taken = demon.set_damage(spell.damage)
             action_description = f"{demon.name} has suffered {dmg_taken} damage"
         if request.form.get("heal"):
