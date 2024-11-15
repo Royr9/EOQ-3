@@ -18,7 +18,7 @@ class Spell:
         self.name = name
         self.rarity = rarity
         # Calculate damage based on multiplier and random factor
-        self.damage = int(damage * random.choice((0.5, 1)) * int(multiplier))
+        self.damage = damage * (int(multiplier) + 1)
 
     def get_name(self):
         """
@@ -56,7 +56,7 @@ class Armor:
         self.name = name
         self.rarity = rarity
         # Calculate defense based on multiplier and random factor
-        self.defense = int(defense * random.choice((0.5, 1)) * int(multiplier))
+        self.defense = defense * (int(multiplier) + 1)
 
     def get_name(self):
         """

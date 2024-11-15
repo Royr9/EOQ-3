@@ -19,9 +19,9 @@
 
         </nav>
         <img src="../static/images/{{ player.image }}">
-        <form class="fight-options" action="/fight" method="post">
-            <button type="submit" name="attack">Attack</button>
-            <button type="submit" name="heal" >Heal</button>
+        <form class="fight-options" action="{{ url_for('fight') }}" method="post">
+            <button type="submit" name="attack" value="attack">Attack</button>
+            <button type="submit" name="heal" value="heal" >Heal</button>
         </form>
     </div>
     

@@ -24,7 +24,7 @@ def fight():
     spell = None
     dmg_taken = None
     # handle user action
-    if request.method == "post":  # noqa: SIM102
+    if request.method == "POST":  # noqa: SIM102
         # choose random spell and use it on the demon
         if request.form.get("attack") and player and demon:
             spell = player.inventory.get_spells()[0]
