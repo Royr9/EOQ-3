@@ -107,7 +107,7 @@ game_data = {
         {
             "name": "Elevator",
             "description": "Floor 1",
-            "action": [
+            "actions": [
                 {
                     "name": "Use elevator",
                     "type": "next_level",
@@ -143,7 +143,8 @@ game_data = {
             "actions": [
                 {
                     "name": "Fight Timothy",
-                    "type": "fight"
+                    "type": "fight",
+                    "value": ""
                 },
                 {
                     "name": "Enter hallway",
@@ -157,7 +158,7 @@ game_data = {
         {
             "name": "Elevator",
             "description": "Floor 5",
-            "action": [
+            "actions": [
                 {
                     "name": "Use elevator",
                     "type": "next_level",
