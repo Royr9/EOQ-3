@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='fight-style.css') }}">
 </head>
 <body>
-    <img src="../static/images/{{ demon.image }}">
-    <img src="../static/images/{{ player.image }}">
-    
+    <div class="demon">
+        <img src="../static/images/{{ demon.image }}">
+    </div>
+    <div class="player">
+        <img src="../static/images/{{ player.image }}">
+    </div>    
 </body>
 </html>
