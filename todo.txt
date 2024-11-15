@@ -2,4 +2,3 @@
 - Create game won html
 - Create pool party option 
 - Add a spell on the roof
-- add player image next to name in game.html
