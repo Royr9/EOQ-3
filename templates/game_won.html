@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You won</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='game-over.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='game-won.css') }}">
 
 </head>
 
 <body>
     <h1>You won!</h1>
-    <img src="{{ url_for('static', filename='images/happy_frank.jpg' ) }}" style="height: 500px;" width="500px" src="" alt="">
+    <div class="won-images">
+        <img class="happy_frank" src="{{ url_for('static', filename='images/happy_frank.jpg' ) }}" >
+        <img class="pool-party" src="{{ url_for('static', filename='images/pool_party.jpg' ) }}" >
+    </div>
+    
     <form style="margin-top: 1rem;" action="/restart" method="post">
         <button type="submit">Restart Game</button>
     </form>
