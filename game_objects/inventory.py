@@ -16,7 +16,7 @@ class Inventory:
 
         :param item: The item to be added (e.g., Spell, Armor, Key)
         """
-        self.inventory.append(item)
+        self.items.append(item)
 
     def remove_item(self, item):
         """
@@ -24,7 +24,7 @@ class Inventory:
 
         :param item: The item to be removed
         """
-        self.inventory.remove(item)
+        self.items.remove(item)
 
     def equip_armor(self, armor: Armor):
         """

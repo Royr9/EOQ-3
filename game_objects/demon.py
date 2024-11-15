@@ -13,7 +13,7 @@ class Demon(ABC):
         return self.health
 
     @abstractmethod
-    def set_damage(self, damage):
+    def set_damage(self, damage) -> int:
         pass
 
     @abstractmethod
@@ -27,8 +27,10 @@ class Frank(Demon):
         super().__init__(name)
         self.image = f'demons/{name}.png'
 
-    def set_damage(self, damage):
-        self.health -= damage * 0.3
+    def set_damage(self, damage) -> int:
+        dmg = damage * 0.3
+        self.health -= dmg
+        return dmg
 
     def attack(self):
         while True:
@@ -49,8 +51,11 @@ class Tibor(Demon):
                 }
             }
     
-    def set_damage(self, damage):
-        self.health -= damage * 0.8
+    def set_damage(self, damage) -> int:
+        dmg = damage * 0.8
+        self.health -= dmg
+        return dmg
+
 
 
     def attack(self):
@@ -68,8 +73,11 @@ class Peter(Demon):
         super().__init__(name)
         self.image = f'/demons/{name}.png'
 
-    def set_damage(self, damage):
-        self.health -= damage * 0.8
+    def set_damage(self, damage) -> int:
+        dmg = damage * 0.8
+        self.health -= dmg
+        return dmg
+
 
     def attack(self):
         while True:
@@ -85,8 +93,11 @@ class Olivier(Demon):
         super().__init__(name)
         self.image = f'/demons/{name}.png'
 
-    def set_damage(self, damage):
-        self.health -= damage * 0.7
+    def set_damage(self, damage) -> int:
+        dmg = damage * 0.7
+        self.health -= dmg
+        return dmg
+
 
     def attack(self):
         while True:
@@ -106,8 +117,11 @@ class Timothy(Demon):
                 }
             }
         
-    def set_damage(self, damage):
-        self.health -= damage * 0.7
+    def set_damage(self, damage) -> int:
+        dmg = damage * 0.7
+        self.health -= dmg
+        return dmg
+
 
     def attack(self):
         attack_type = random.choice([attacks.items(), self.custom_attacks.items()])

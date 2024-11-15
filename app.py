@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from game_objects.player import Player
 from game_objects.game import load
 from game_objects.demon import get_demon_by_name
+from game_objects.items import Spell
 
 
 app = Flask(__name__)
@@ -21,14 +22,15 @@ demon = None
 def fight():
     global demon  # noqa: PLW0602
     spell = None
+    dmg_taken = None
     # handle user action
     if request.method == "post":  # noqa: SIM102
         # choose random spell and use it on the demon
         if request.form.get("attack") and player and demon:
             spell = player.inventory.get_spells()[0]
-            demon.set_damage(spell.damage)
+            dmg_taken = demon.set_damage(spell.damage)
 
-    return render_template("fight.html", demon=demon, player=player, spell=spell)
+    return render_template("fight.html", demon=demon, player=player, spell=spell, dmg_taken=dmg_taken)
 
 
 @app.route("/start-game", methods=['GET', 'POST'])
@@ -38,6 +40,7 @@ def start_game():
         return render_template("start-screen.html")
     
     player = Player(request.form.get("username"), health=100)
+    player.inventory.add_item(Spell(level.level))
     return redirect("/")
     
 

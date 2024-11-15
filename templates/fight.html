@@ -19,7 +19,19 @@
 
         </nav>
         <img src="../static/images/{{ player.image }}">
-    </div>    
+        <form class="fight-options" action="/fight" method="post">
+            <button type="submit" name="attack">Attack</button>
+            <button type="submit" name="heal" >Heal</button>
+        </form>
+    </div>
+    
+    <div class="fight-info">
+        {% if spell %}
+            <p class="spell">{{ spell.name }}</p><span>( {{ spell.rarity }})</span>
+            <p>{{ demon.name }} has suffered {{ dmg_taken }}</p>
+        {% endif %}
+    </div>
+
     <div class="demon">
         <nav>
             <span class="demom_name">{{ demon.name }}</span>
@@ -27,9 +39,6 @@
         </nav>
         <img src="../static/images/{{ demon.image }}">
     </div>
-    <form class="fight-options" action="/fight" method="post">
-        <button type="submit" name="attack">Attack</button>
-        <button type="submit" name="heal" >Heal</button>
-    </form>
+    
 </body>
 </html>
