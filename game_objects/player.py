@@ -1,4 +1,5 @@
 from game_objects.inventory import Inventory
+import random
 
 class Player:
     def __init__(self, name, health):
@@ -11,7 +12,7 @@ class Player:
         self.name = name
         self.health = health
         self.inventory = Inventory()
-        self.image = f"/player/player.png"
+        self.image = f"/player/player{random.randint(1, 5)}.png"
 
     def take_damage(self, amount):
         """
