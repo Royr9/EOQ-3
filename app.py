@@ -33,7 +33,7 @@ def fight():
             dmg_taken = demon.set_damage(spell.damage)
             action_description = f"{demon.name} has suffered {dmg_taken} damage"
         if request.form.get("heal"):
-            heal_amount = player.heal(80)
+            heal_amount = player.heal(random.randint(20, 80))
             action_description = f"You have healed {heal_amount} hp"
         
         # demon attack
@@ -104,6 +104,7 @@ def choose_action():
 
     if not game_object.get_current_level().is_demon_killed() and "Fight" in action_name or "Disturb" in action_name:
         demon = get_demon_by_name(location.demon)
+        # demon = get_demon_by_name("Frank")
         return redirect(url_for("fight"))
 
     if action_name in location.get_action_names():
