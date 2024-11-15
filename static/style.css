@@ -71,15 +71,27 @@ nav span {
 .items span {
     display: inline-block;
     margin-right: 10px;
-    background-color: #9b59b6;
     padding: 5px;
     border-radius: 3px;
 }
 
-.items span:hover {
-    background-color: #8e44ad;
-}
-
 input{
     padding: 0.5rem 1rem;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    filter: invert(32%) sepia(74%) saturate(748%) hue-rotate(262deg) brightness(89%) contrast(101%);
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.items span {
+    display: flex;
+    align-items: center;
 }
