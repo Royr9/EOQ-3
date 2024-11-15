@@ -30,6 +30,7 @@ class Frank(Demon):
     def set_damage(self, damage) -> int:
         dmg = math.floor(damage * 0.3)
         self.health -= dmg
+        max(self.health, 0)
         return dmg
 
     def attack(self):
@@ -55,6 +56,7 @@ class Tibor(Demon):
         dmg = math.floor(damage * 0.8)
 
         self.health -= dmg
+        max(self.health, 0)
         return dmg
 
 
@@ -78,6 +80,7 @@ class Peter(Demon):
         dmg = math.floor(damage * 0.7)
 
         self.health -= dmg
+        max(self.health, 0)
         return dmg
 
 
@@ -98,6 +101,7 @@ class Olivier(Demon):
     def set_damage(self, damage) -> int:
         dmg = math.floor(damage * 0.5)
         self.health -= dmg
+        max(self.health, 0)
         return dmg
 
 
@@ -122,6 +126,7 @@ class Timothy(Demon):
     def set_damage(self, damage) -> int:
         dmg = math.floor(damage * 0.5)
         self.health -= dmg
+        max(self.health, 0)
         return dmg
 
 
