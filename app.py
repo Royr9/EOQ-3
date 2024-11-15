@@ -16,15 +16,6 @@ player = None
 action_res = None
 demon = None
 
-def restart_game():
-    global player, action_res, demon, level, game_object
-    game_object = load()
-    level = game_object.get_current_level()
-    player = None
-    action_res = None
-    demon = None
-    return redirect("start-game")
-
 
 @app.route("/fight", methods=["POST", "GET"])
 def fight():
@@ -49,16 +40,28 @@ def fight():
         player.take_damage(demon_attack[1]["Damage"])
         
         if player.health == 0:
-            return restart_game()
+            return redirect(url_for("game_over"))
         
         if demon.health == 0:
             game_object.get_current_level().kill_demon()
             demon = None
             return redirect("/")
             
-            
     return render_template("fight.html", demon=demon, demon_attack=demon_attack, player=player, spell=spell, action_description=action_description)
 
+@app.route("/game_over")
+def game_over():
+    return render_template("game_over.html")
+
+@app.route("/restart", methods=["POST"])
+def restart_game():
+    global player, action_res, demon, level, game_object
+    game_object = load()
+    level = game_object.get_current_level()
+    player = None
+    action_res = None
+    demon = None
+    return redirect("start-game")
 
 @app.route("/start-game", methods=['GET', 'POST'])
 def start_game():

@@ -45,7 +45,7 @@ class Tibor(Demon):
     def __init__(self):
         name = "Tibor"
         super().__init__(name)
-        self.health = 10
+        self.health = 80
         self.image = f'/demons/{name}.png'
         self.custom_attacks = {
             "Insults you in Swedish": {
@@ -75,7 +75,8 @@ class Peter(Demon):
         name = "Peter"
         super().__init__(name)
         self.image = f'/demons/{name}.png'
-
+        self.health = 90
+        
     def set_damage(self, damage) -> int:
         dmg = math.floor(damage * 0.7)
         self.health -= dmg

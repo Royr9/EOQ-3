@@ -10,7 +10,7 @@ class Player:
         :param health: The player's initial health
         """
         self.name = name
-        self.health = health
+        self.health = 100
         self.inventory = Inventory()
         self.image = f"/player/player{random.randint(1, 5)}.png"
 
