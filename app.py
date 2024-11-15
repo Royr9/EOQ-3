@@ -17,12 +17,18 @@ demon = None
 
 
 
-@app.route("/fight")
+@app.route("/fight", methods=["POST", "GET"])
 def fight():
-    global demon  # noqa: PLW0603
-    
+    global demon  # noqa: PLW0602
+    spell = None
+    # handle user action
+    if request.method == "post":  # noqa: SIM102
+        # choose random spell and use it on the demon
+        if request.form.get("attack") and player and demon:
+            spell = player.inventory.get_spells()[0]
+            demon.set_damage(spell.damage)
 
-    return render_template("fight.html", demon=demon, player=player)
+    return render_template("fight.html", demon=demon, player=player, spell=spell)
 
 
 @app.route("/start-game", methods=['GET', 'POST'])

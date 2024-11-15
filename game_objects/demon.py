@@ -48,9 +48,10 @@ class Tibor(Demon):
                 "Message": "Din dator är en potatis för helvete.", "Damage": 18
                 }
             }
-
+    
     def set_damage(self, damage):
         self.health -= damage * 0.8
+
 
     def attack(self):
         attack_type = random.choice([attacks.items(), self.custom_attacks.items()])

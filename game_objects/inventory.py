@@ -39,6 +39,14 @@ class Inventory:
         Unequip the current armor.
         """
         self.armor = None
+        
+    def get_spells(self) -> list:
+        spells = []
+        for item in self.items:
+            if isinstance(item, Spell):
+                spells.append(item)
+    
+        return spells
 
     def get_armor(self) -> Armor | None:
         """
