@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You won</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='game-over.css') }}">
+
 </head>
+
 <body>
     <h1>You won!</h1>
-    <img style="height: 500px;" width="500px" src="" alt="">
-    
+    <img src="{{ url_for('static', filename='images/happy_frank.jpg' ) }}" style="height: 500px;" width="500px" src="" alt="">
+    <form style="margin-top: 1rem;" action="/restart" method="post">
+        <button type="submit">Restart Game</button>
+    </form>
 </body>
 </html>
