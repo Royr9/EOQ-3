@@ -16,6 +16,14 @@ player = None
 action_res = None
 demon = None
 
+def restart_game():
+    global player, action_res, demon, level, game_object
+    game_object = load()
+    level = game_object.get_current_level()
+    player = None
+    action_res = None
+    demon = None
+    return redirect("start-game")
 
 
 @app.route("/fight", methods=["POST", "GET"])
@@ -32,14 +40,23 @@ def fight():
             dmg_taken = demon.set_damage(spell.damage)
             action_description = f"{demon.name} has suffered {dmg_taken} damage"
         if request.form.get("heal"):
-            heal_amount = player.heal(15)
+            heal_amount = player.heal(80)
             action_description = f"You have healed {heal_amount} hp"
         
         # demon attack
         # attack is a dict "attack description": "message": ,"Damage":
         demon_attack = demon.attack()
         player.take_damage(demon_attack[1]["Damage"])
-
+        
+        if player.health == 0:
+            return restart_game()
+        
+        if demon.health == 0:
+            game_object.next_level()
+            demon = None
+            return redirect("/")
+            
+            
     return render_template("fight.html", demon=demon, demon_attack=demon_attack, player=player, spell=spell, action_description=action_description)
 
 
