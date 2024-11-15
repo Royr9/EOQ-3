@@ -99,3 +99,8 @@ input {
 .demon_action {
     margin-top: 100px;
 }
+
+
+.action_description{
+    font-weight: bolder;
+}

@@ -110,5 +110,9 @@ attacks = {
     "Premature Optimization Slam": {
         "Message": "Oh, you optimized before even knowing if it worked? Risky.",
         "Damage": 26
+    },
+    "A curse from god": {
+        "Message": "וַיֹּאמֶר יְהֹוָה אֱלֹהִים אֶל הַנָּחָשׁ כִּי עָשִׂיתָ זֹּאת אָרוּר אַתָּה מִכָּל הַבְּהֵמָה וּמִכֹּל חַיַּת הַשָּׂדֶה עַל גְּחֹנְךָ תֵלֵךְ וְעָפָר תֹּאכַל כָּל יְמֵי חַיֶּיךָ",
+        "Damage": 40
     }
 }

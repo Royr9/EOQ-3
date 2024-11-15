@@ -40,7 +40,7 @@ class Frank(Demon):
     def attack(self):
         while True:
             attack = random.choice(list(attacks.items()))
-            if attack[1]["Damage"] >= 30 and attack[1]["Damage"] <= 35:
+            if attack[1]["Damage"] >= 30 and attack[1]["Damage"] <= 40:
                 break
         return attack
             
@@ -112,7 +112,7 @@ class Olivier(Demon):
     def attack(self):
         while True:
             attack = random.choice(list(attacks.items()))
-            if attack[1]["Damage"] >= 25 and attack[1]["Damage"] <= 30:
+            if attack[1]["Damage"] >= 15 and attack[1]["Damage"] <= 40:
                 break
         return attack
     
