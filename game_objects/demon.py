@@ -32,7 +32,7 @@ class Frank(Demon):
         self.health -= dmg
         self.health = max(self.health, 0)
         if self.health <= 50:
-            self.image = '/demons/frank.png'
+            self.image = '/demons/Frank.png'
         return dmg
 
     def attack(self):
