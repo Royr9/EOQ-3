@@ -44,10 +44,12 @@ class Action:
                     spell = Spell(game.get_level())
                     for player_spell in player.get_inventory().get_spells():
                         if spell.name == player_spell.name:
-                            continue
-                    break
+                            break
+                    else:
+                        player.get_inventory().add_item(spell)
+                        break
+                    
                 
-                player.get_inventory().add_item(spell)
                 self.used = True
                 return f"You received the {spell.name}"
         elif self.type == 'fight':
