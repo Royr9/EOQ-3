@@ -82,6 +82,7 @@ def start_game():
     
     player = Player(request.form.get("username"), health=100)
     player.inventory.add_item(Spell(level.level))
+    
     return redirect("/")
     
 

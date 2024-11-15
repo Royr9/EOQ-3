@@ -39,13 +39,21 @@ class Action:
             if self.used:
                 return "You have already learned this spell!"
             else:
-                spell = Spell(game.get_level())
+                while True:
+                    spell = Spell(game.get_level())
+                    for player_spell in player.get_inventory().get_spells():
+                        if spell.name == player_spell.name:
+                            continue
+                    break
+                
                 player.get_inventory().add_item(spell)
                 self.used = True
                 return f"You received the {spell.name}"
         elif self.type == 'fight':
             if game.get_current_level().is_demon_killed():
                 return "You have already slain this filthy demon!"
+        
+        return ''
 
     def __str__(self):
         """
