@@ -54,10 +54,12 @@ nav span {
 
 .player_name {
     color: #a83232;
+    font-size: 20px;
 }
 
 .health {
     color: #2ecc71;
+    font-size: 20px;
 }
 
 .armor {
