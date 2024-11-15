@@ -46,11 +46,20 @@ def fight():
             return redirect(url_for("game_over"))
         
         if demon.health == 0:
+            player.heal(100)
+            if demon.name == "Frank":
+                return redirect(url_for("game_won"))
+            
             game_object.get_current_level().kill_demon()
             demon = None
             return redirect("/")
             
     return render_template("fight.html", demon=demon, demon_attack=demon_attack, player=player, spell=spell, action_description=action_description)
+
+@app.route("/game_won")
+def game_won():
+    return render_template("game_won.html")
+
 
 @app.route("/game_over")
 def game_over():
