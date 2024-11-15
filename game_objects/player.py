@@ -36,7 +36,9 @@ class Player:
 
         :param amount: The healing amount
         """
-        self.health = min(self.health + amount, 100)
+        healed_amount = min(amount, 100 - self.health)
+        self.health += healed_amount
+        return healed_amount
 
     def get_inventory(self) -> Inventory:
         """
