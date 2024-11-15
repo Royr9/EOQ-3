@@ -28,6 +28,7 @@
     <div class="fight-info">
         {% if action_description %}
             <div class="player_action">
+                <h3>You have used:</h3>
                 {% if spell %}
                     <p class="spell">{{ spell.name }}</p><span>( {{ spell.rarity }})</span>  
                 {% endif %}
@@ -37,6 +38,7 @@
        
         {% if demon_attack %}
         <div class="demon_action">
+            <h3>{{ demon.name }} has used:</h3>
             <!-- description -->
             <p>{{ demon_attack[0] }}</p>
             <p>{{ demon_attack[1]["Message"] }}</p>

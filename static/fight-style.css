@@ -92,6 +92,10 @@ nav span {
     border-radius: 3px;
 }
 
-input{
+input {
     padding: 0.5rem 1rem;
+}
+
+.demon_action {
+    margin-top: 100px;
 }
