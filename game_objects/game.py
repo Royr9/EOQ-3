@@ -54,6 +54,11 @@ game_data = {
             "demon": "Tibor",
             "actions": [
                 {
+                   "name": "Fight Tibor",
+                    "type": "fight",
+                    "value": ""
+                },
+                {
                     "name": "Use elevator",
                     "type": "next_level",
                     "value": ""
