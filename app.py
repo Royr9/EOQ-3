@@ -53,6 +53,7 @@ def fight():
         
         if demon.health == 0:
             game_object.next_level()
+            game_object.get_current_level().killed_demon()
             demon = None
             return redirect("/")
             

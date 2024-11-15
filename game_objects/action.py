@@ -30,8 +30,11 @@ class Action:
             game.get_current_level().move(self.value)
             return f"You walked to the {self.value}"
         elif self.type == "next_level":
-            game.next_level()
-            return "You went to the next floor."
+            if game.get_current_level().is_demon_killed():
+                game.next_level()
+                return "You went to the next floor."
+            else:
+                return "You have to kill the demon first"
         elif self.type == 'give_spell':
             if self.used:
                 return "You have already learned this spell!"

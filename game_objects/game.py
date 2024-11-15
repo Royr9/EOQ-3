@@ -16,7 +16,8 @@ game_data = {
                     "value": "Entrance"
                 }
             ]
-        }, {
+        },
+        {
             "name": "Entrance",
             "description": "As you walk in you see the receptionist is trying to get your attention. Maybe you should check it out.",
             "actions": [
@@ -24,25 +25,30 @@ game_data = {
                     "name": "Go to the reception",
                     "type": "move",
                     "value": "Reception"
-                }, {
+                },
+                {
                     "name": "Go to the toilets",
                     "type": "move",
                     "value": "Toilets"
-                }, {
+                },
+                {
                     "name": "Use escalator",
                     "type": "print",
                     "value": "The escalator is broken. Again..."
-                }, {
+                },
+                {
                     "name": "Use stairs",
                     "type": "print",
                     "value": "The stairs are broken. Not sure how that happened"
-                }, {
+                },
+                {
                     "name": "Use elevator",
                     "type": "move",
                     "value": "Elevator"
                 }
             ]
-        }, {
+        },
+        {
             "name": "Elevator",
             "description": "Before you stands the mighty demon Tibor",
             "demon": "Tibor",
@@ -51,13 +57,15 @@ game_data = {
                     "name": "Use elevator",
                     "type": "next_level",
                     "value": ""
-                }, {
+                },
+                {
                     "name": "Go back",
                     "type": "move",
                     "value": "Entrance"
                 }
             ]
-        }, {
+        },
+        {
             "name": "Toilets",
             "description": "Description",
             "actions": [
@@ -65,17 +73,20 @@ game_data = {
                     "name": "Check sink",
                     "type": "print",
                     "value": "You drank some and it made you feel refreshed."
-                }, {
+                },
+                {
                     "name": "Check toilet",
-                    "type": "print",
+                    "type": "",
                     "value": "todo maybe give the player something?"
-                }, {
+                },
+                {
                     "name": "Go back",
                     "type": "move",
                     "value": "Entrance"
                 }
             ]
-        }, {
+        },
+        {
             "name": "Reception",
             "description": "As you walk up to there the receptionist starts screaming that there are demons in the building. If only there was someone to kill them.",
             "actions": [
@@ -83,7 +94,8 @@ game_data = {
                     "name": "Learn spell",
                     "type": "give_spell",
                     "value": ""
-                }, {
+                },
+                {
                     "name": "Go back",
                     "type": "move",
                     "value": "Entrance"
@@ -91,7 +103,78 @@ game_data = {
             ]
         }
     ],
+    1: [
+        {
+            "name": "Elevator",
+            "description": "Floor 1",
+            "action": [
+                {
+                    "name": "Use elevator",
+                    "type": "next_level",
+                    "value": ""
+                },
+                {
+                    "name": "Enter hallway",
+                    "type": "move",
+                    "value": "Hallway"
+                }
+            ]
+        },
+        {
+            "name": "Hallway",
+            "description": "The hallway is long and filled with students",
+            "actions": [
+                {
+                    "name": "Enter elevator",
+                    "type": "move",
+                    "value": "Elevator"
+                },
+                {
+                    "name": "Enter canteen",
+                    "type": "move",
+                    "value": "Canteen"
+                }
+            ]
+        },
+        {
+            "name": "Canteen",
+            "description": "The hallway is long and filled with students",
+            "demon": "Timothy",
+            "actions": [
+                {
+                    "name": "Fight Timothy",
+                    "type": "fight"
+                },
+                {
+                    "name": "Enter hallway",
+                    "type": "move",
+                    "value": "Hallway"
+                }
+            ]
+        }
+    ],
     5: [
+        {
+            "name": "Elevator",
+            "description": "Floor 5",
+            "action": [
+                {
+                    "name": "Use elevator",
+                    "type": "next_level",
+                    "value": ""
+                },
+                {
+                    "name": "Enter hallway",
+                    "type": "move",
+                    "value": "Hallway"
+                },
+                {
+                    "name": "Enter igloo",
+                    "type": "move",
+                    "value": "Igloo"
+                }
+            ]
+        },
         {
             "name": "Hallway",
             "description": "The hallway is long and filled with students",
@@ -100,17 +183,20 @@ game_data = {
                     "name": "Enter toilet",
                     "type": "print",
                     "value": "The janitor blocks the door"
-                }, {
+                },
+                {
                     "name": "Enter office",
                     "type": "move",
-                    "value": "Office",
-                }, {
-                    "name": "Enter igloo",
+                    "value": "Office"
+                },
+                {
+                    "name": "Enter elevator",
                     "type": "move",
-                    "value": "Igloo",
+                    "value": "Elevator"
                 }
             ]
-        }, {
+        },
+        {
             "name": "Igloo",
             "description": "You feel comfortable here",
             "actions": [
@@ -118,17 +204,20 @@ game_data = {
                     "name": "Get coffee",
                     "type": "print",
                     "value": "The coffee machine is out of water"
-                }, {
-                    "name": "Enter hallway",
+                },
+                {
+                    "name": "Enter elevator",
                     "type": "move",
-                    "value": "Hallway",
-                }, {
+                    "value": "Elevator"
+                },
+                {
                     "name": "Enter office",
                     "type": "move",
-                    "value": "Office",
+                    "value": "Office"
                 }
             ]
-        }, {
+        },
+        {
             "name": "Office",
             "description": "Its quiet here",
             "demon": "Peter",
@@ -137,11 +226,13 @@ game_data = {
                     "name": "Enter igloo",
                     "type": "move",
                     "value": "Igloo"
-                }, {
+                },
+                {
                     "name": "Enter hallway",
                     "type": "move",
                     "value": "Hallway"
-                }, {
+                },
+                {
                     "name": "Talk to peter",
                     "type": "print",
                     "value": "Peter says a terrible pun, Peter is happy now."
@@ -151,10 +242,26 @@ game_data = {
     ],
     9: [
         {
+            "name": "Elevator",
+            "description": "Floor 9: The Final Battle.",
+            "actions": [
+                {
+                    "name": "Enter roof terrace",
+                    "type": "move",
+                    "value": "Roof"
+                }
+            ]
+        },
+        {
             "name": "Roof",
             "description": "The wind blows through your hair.",
+            "demon": "Frank",
             "actions": [
-
+                {
+                    "name": "Fight Frank",
+                    "type": "fight",
+                    "value": ""
+                }
             ]
         }
     ]

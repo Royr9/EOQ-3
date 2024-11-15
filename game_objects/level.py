@@ -10,6 +10,7 @@ class Level:
         self.level = level
         self.current_location = starting_location
         self.locations = locations
+        self.is_killed = False
 
     def get_current_location(self):
         """
@@ -50,6 +51,13 @@ class Level:
         :param location: The name of the new location to move to
         """
         self.current_location = location
+
+    def is_demon_killed(self):
+        return self.is_killed
+
+    def kill_demon(self):
+        self.is_killed = True
+
 
 
 
