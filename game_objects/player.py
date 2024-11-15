@@ -10,7 +10,7 @@ class Player:
         :param health: The player's initial health
         """
         self.name = name
-        self.health = 100
+        self.health = 150
         self.inventory = Inventory()
         self.image = f"/player/player{random.randint(1, 5)}.png"
 
@@ -36,7 +36,7 @@ class Player:
 
         :param amount: The healing amount
         """
-        healed_amount = min(amount, 100 - self.health)
+        healed_amount = min(amount, 150 - self.health)
         self.health += healed_amount
         return healed_amount
 

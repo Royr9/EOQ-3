@@ -54,7 +54,7 @@ def fight():
             return redirect(url_for("game_over"))
         
         if demon.health == 0:
-            player.heal(100)
+            player.heal(150)
             if demon.name == "Frank":
                 return redirect(url_for("game_won"))
             
@@ -114,8 +114,8 @@ def choose_action():
     if not game_object.get_current_level().is_demon_killed() and "Fight" in action_name or "Disturb" in action_name:
         demon = get_demon_by_name(location.demon)
         if demon and demon.name != "Frank":
-            demon.health = 50
-    
+            demon.health = 30
+        demon = get_demon_by_name("Frank")
         return redirect(url_for("fight"))
 
     if action_name in location.get_action_names():
