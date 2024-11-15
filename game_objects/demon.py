@@ -47,7 +47,6 @@ class Tibor(Demon):
     def __init__(self):
         name = "Tibor"
         super().__init__(name)
-        self.health = 80
         self.image = f'/demons/{name}.png'
         self.custom_attacks = {
             "Insults you in Swedish": {
