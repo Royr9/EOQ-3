@@ -5,6 +5,10 @@ from game_objects.game import load
 from game_objects.demon import get_demon_by_name
 from game_objects.items import Spell
 import random
+import pygame
+import os
+# Initialize pygame mixer
+pygame.mixer.init()
 
 
 app = Flask(__name__)
@@ -39,6 +43,11 @@ def fight():
         # demon attack
         # attack is a dict "attack description": "message": ,"Damage":
         demon_attack = demon.attack()
+        if demon.name == "Timothy":
+            file_path = os.path.join(os.getcwd(), "static", "tim.wav")
+            pygame.mixer.music.load(file_path)
+            pygame.mixer.music.play()
+            
         player.take_damage(demon_attack[1]["Damage"])
         
         if player.health == 0:
@@ -106,7 +115,7 @@ def choose_action():
         demon = get_demon_by_name(location.demon)
         if demon and demon.name != "Frank":
             demon.health = 50
-        # demon = get_demon_by_name("Frank")
+    
         return redirect(url_for("fight"))
 
     if action_name in location.get_action_names():
